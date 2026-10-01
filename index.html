@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exponential — Internal Business Plan</title>
+<meta name="description" content="Exponential helps the next generation learn AI and build real robots and physical products.">
+<meta name="theme-color" content="#01050a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2301050a'/%3E%3Cpath d='M10 8h12v3.2h-8.3v3.2h7.3v3.2h-7.3v3.2H22V24H10z' fill='%234f8ff7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<link rel="preload" as="image" href="./assets/fe6757f112800e1d4fba3f638f089acf.png" fetchpriority="high">
+<style>
+body{margin:0;background:#01050a}
+a{color:#8db6ff}a:hover{color:#c3d8ff}
+.xp *{box-sizing:border-box}
+.xp-num{display:inline-flex;align-items:center;justify-content:center;font-size:31px;font-weight:500;color:#4f8ff7;line-height:1;padding:3px 4px;border-radius:5px;background:#060b16;box-shadow:0 0 0 1px #0d1626}
+.xp-h2{margin:0;font-size:32px;line-height:1.1;font-weight:700;letter-spacing:0.005em;color:#ffffff}
+.xp-dots{background-image:radial-gradient(circle,rgba(60,110,230,.55) 1px,transparent 1.4px);background-size:7px 7px;-webkit-mask-image:radial-gradient(ellipse at 40% 30%,#000 0,transparent 70%);mask-image:radial-gradient(ellipse at 40% 30%,#000 0,transparent 70%)}
+.xp-sh{display:flex;align-items:center;gap:13px;font-size:16px;font-weight:700;white-space:nowrap}
+.xp-dot{flex:none;width:33px;height:33px;border-radius:50%;background:#4a86f0;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:600}
+.xp-sv{display:flex;align-items:center;margin-top:20px;height:150px}.xp-sv img{flex:none}
+.xp-arr{margin-left:8px;flex:none}
+.xp-sp{margin:10px 0 0 0;font-size:16.5px;line-height:23px;color:#a9b0bd;padding-right:40px}.xp-step:last-child .xp-sp{padding-right:0}
+.xp-fc{height:208px;border:1.5px solid #15233a;border-radius:9px;background:#040c17;padding-top:18px;text-align:center}
+.xp-ft{font-size:13px;font-weight:700;letter-spacing:0.01em;margin-bottom:6px}
+.xp-fa{display:flex;align-items:center;margin:0 -16px;position:relative;z-index:1}
+.xp-check{list-style:none;padding:0;display:flex;flex-direction:column;gap:12.5px}
+.xp-check li{display:flex;align-items:center;gap:19px;font-size:16px;line-height:18px;color:#c1c8d4}
+.xp-check-s{gap:12.5px}.xp-check-s li{font-size:15.5px}
+.xp-box{flex:none;width:18px;height:18px;border-radius:3px;background:#3f86f2;display:inline-flex;align-items:center;justify-content:center}
+.xp-days li{display:flex;gap:23px;align-items:flex-start;margin-bottom:11px}
+.xp-days .xp-dot{margin-top:2px}
+.xp-dt{font-size:14.8px;font-weight:600;line-height:20px}
+.xp-dd{font-size:12px;line-height:16px;color:#a0a8b6;margin-top:3px}
+@media (max-width:1100px){
+.xp-hero{height:auto!important;padding-bottom:20px}
+.xp-hero-img{position:relative!important;width:100%!important;height:auto!important}
+.xp-hero-copy{width:auto!important;padding:48px 24px 0 24px!important}
+.xp-hero-copy img{width:100%!important;margin-left:0!important}
+.xp-split{flex-direction:column}.xp-split>div{flex:auto!important}
+.xp-diagram{flex-wrap:wrap;gap:16px;justify-content:center!important}
+.xp-3{grid-template-columns:1fr!important}
+.xp-steps{grid-template-columns:1fr!important;gap:28px}.xp-arr{display:none}
+.xp-flow{flex-wrap:wrap;gap:14px;justify-content:center!important}.xp-fa{display:none}
+.xp-kids-img{position:relative!important;right:auto!important;width:100%!important;height:auto!important}
+.xp-kids{display:flex;flex-direction:column-reverse}
+.xp-split2{grid-template-columns:1fr!important}.xp-split2>section{border-right:0!important;padding-left:0!important}
+.xp-content-img{position:relative!important;left:auto!important;margin-top:20px}
+.xp-h2{font-size:24px!important}
+}
+@media (max-width:1100px){.xp>div>div{padding:0 20px!important}}
+.xp-step:nth-child(4) .xp-sp{padding-right:52px}.xp-step:nth-child(1) .xp-sp{padding-right:58px}
+
+/* ---------- Fixed header + section navigation ---------- */
+:root{--hdr:66px}
+html{scroll-padding-top:var(--hdr)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.xp-bar{position:sticky;top:0;z-index:50;background:rgba(1,5,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-family:'Google Sans','Inter',system-ui,sans-serif}
+.xp-bar *{box-sizing:border-box}
+.xp-bar-in{max-width:1282px;margin:0 auto;height:66px;border-bottom:1px solid #111a28;display:flex;align-items:center;padding:0 90px 0 57px;gap:24px}
+.xp-logo{display:block;flex:none;border-radius:4px}
+.xp-logo img{width:174px;height:auto;display:block}
+.xp-nav{margin-left:auto;display:flex;gap:37px;font-size:15px;height:66px;align-items:stretch}
+.xp-nav a{color:#8b93a3;text-decoration:none;display:flex;align-items:center;gap:8px;padding:0 2px;margin-bottom:-1px;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
+.xp-nav a:hover{color:#ffffff}
+.xp-nav a.is-active{color:#ffffff;font-weight:500;border-bottom-color:#3b7ddd}
+.xp-nav a.is-active .xp-n{color:#6fa0ff}
+/* Reserve the bold width so the active state never shifts neighbouring links */
+.xp-t{display:inline-flex;flex-direction:column}
+.xp-t::after{content:attr(data-t);font-weight:500;height:0;overflow:hidden;visibility:hidden}
+.xp-nav a:focus-visible,.xp-logo:focus-visible{outline:2px solid #4f8ff7;outline-offset:2px}
+@media (max-width:1100px){
+:root{--hdr:76px}
+.xp-bar-in{height:auto;flex-wrap:wrap;gap:0;padding:12px 0 0 0}
+.xp-logo{margin-left:20px}
+.xp-logo img{width:140px}
+.xp-nav{flex:0 0 100%;margin:4px 0 0 0;height:44px;gap:26px;padding:0 20px;font-size:14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.xp-nav::-webkit-scrollbar{display:none}
+/* Let fixed-width desktop text wrap on small screens */
+.xp-hero-copy h1,.xp-h2,.xp-card div{white-space:normal!important}
+}
+</style>
+</head>
+<body>
+<header class="xp-bar">
+<div class="xp-bar-in">
+<a class="xp-logo" href="#vision" aria-label="Exponential — back to top"><img src="./assets/2568aa5b220e17510f114e1e6fdf8f0b.png" alt="Exponential" width="174" height="19"></a>
+<nav class="xp-nav" aria-label="Sections">
+<a href="#vision" class="is-active" aria-current="location"><span class="xp-n">01</span><span class="xp-t" data-t="Vision">Vision</span></a>
+<a href="#problem"><span class="xp-n">02</span><span class="xp-t" data-t="Problem">Problem</span></a>
+<a href="#solution"><span class="xp-n">03</span><span class="xp-t" data-t="Solution">Solution</span></a>
+<a href="#plan"><span class="xp-n">04</span><span class="xp-t" data-t="Plan">Plan</span></a>
+<a href="#revenue"><span class="xp-n">05</span><span class="xp-t" data-t="Revenue">Revenue</span></a>
+<a href="#roadmap"><span class="xp-n">06</span><span class="xp-t" data-t="Roadmap">Roadmap</span></a>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="xp" style="background-color: #01050a; color: #ffffff; font-family: 'Google Sans', 'Inter', system-ui, sans-serif; overflow: hidden">
+<div style="max-width: 1282px; margin: 0 auto; position: relative">
+
+<section id="vision" class="xp-hero" style="position: relative; height: 546px; border-bottom: 1px solid #111a28">
+<div class="xp-dots" style="position: absolute; left: 380px; top: 0; width: 520px; height: 360px; opacity: 0.55"></div>
+<img fetchpriority="high" class="xp-hero-img" src="./assets/fe6757f112800e1d4fba3f638f089acf.png" alt="AI tools, real components and guidance on a workbench: a laptop prompting build a robot, a tracked robot and a box of parts" style="position: absolute; right: 0; top: 0; width: 665px; height: 546px; display: block">
+<div class="xp-hero-copy" style="position: relative; z-index: 2; padding: 88px 0 0 60px; width: 780px">
+<div style="display: inline-flex; align-items: center; gap: 9px; border: 1.5px solid #2c63c9; border-radius: 4px; padding: 6px 12px; color: #6b9cf4; font-size: 11px; letter-spacing: 0.06em; font-weight: 500; box-shadow: 0 0 12px rgba(44, 99, 201, 0.35)">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l2 2"></path></svg>INTERNAL BUSINESS PLAN</div>
+<img src="./assets/2568aa5b220e17510f114e1e6fdf8f0b.png" alt="Exponential" style="display: block; width: 616px; height: auto; margin: 20px 0 0 -9px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18))">
+<h1 style="margin: 31px 0 0 0; font-size: 31px; line-height: 1.2; font-weight: 700; white-space: nowrap; letter-spacing: -0.005em">Learn. Build. Ship. <span style="color: #b9c3d6; font-weight: 500">A STEM student accelerator.</span></h1>
+<p style="margin: 22px 0 0 0; font-size: 19px; line-height: 25.5px; color: #d0d6e0; max-width: 535px">Exponential helps the next generation learn AI and build real robots and physical products. We start with a community and tutoring, and grow into a full platform that helps people go from idea to design, components, manufacturing and shipping.</p>
+</div>
+</section>
+
+<div style="padding: 0 52px 0 60px">
+
+
+<section id="problem" class="xp-split" style="display: flex; gap: 60px; padding: 46px 0 52px 0; border-bottom: 1px solid #141c2b">
+<div style="flex: 0 0 530px">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num">01</span><h2 class="xp-h2">THE BIG IDEA</h2></div>
+<h3 style="margin: 22px 0 0 0; font-size: 23.5px; line-height: 30px; font-weight: 500; color: #ffffff">Make it easy for anyone to build physical things with AI.</h3>
+<p style="margin: 22px 0 0 0; font-size: 19px; line-height: 25.5px; color: #b9c0cc">We combine AI tools, hands-on learning, a strong community, and real-world supply chain support so that more people (especially kids and beginners) can turn their ideas into robots, gadgets and real products.</p>
+</div>
+<div class="xp-diagram" style="flex: 0 0 584px; margin-left: auto; display: flex; align-items: center; justify-content: space-between; position: relative; padding-top: 34px">
+<div style="width: 132px; height: 202px; border: 1.5px solid #273246; border-radius: 9px; background-color: #050a13; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2px">
+<img loading="lazy" decoding="async" src="./assets/63ac002ce888757b0aba0b0bc2d19068.png" alt="" style="width: 75px; height: 82px; display: block">
+<div style="font-size: 17px; font-weight: 700; letter-spacing: 0.04em; margin-top: 12px">IDEA</div>
+<div style="font-size: 15.5px; line-height: 19px; color: #7fa8f2">“I want to build<br>this”</div>
+</div>
+<svg width="38" height="14" viewBox="0 0 38 14" fill="none" stroke="#e6ebf3" stroke-width="2" stroke-linecap="round"><path d="M1 7h34M29 1l6 6-6 6"></path></svg>
+<div style="position: relative">
+<svg width="276" height="300" viewBox="0 0 276 300" fill="none" stroke="#3d7fe6" stroke-width="2.4" stroke-linecap="round" style="position: absolute; left: -48px; top: -35px; pointer-events: none"><path d="M42 8l12 16M65 4l4 13M14 46l20 14M206 5l-7 22M228 25l-19 14M240 268l-12-9M206 287l-8-18M50 262l-14 12M34 247l12-3M60 294l3-12"></path></svg>
+<div style="position: relative; width: 206px; height: 238px; border: 2.5px solid #3f84f2; border-radius: 11px; background-color: #030915; box-shadow: 0 0 22px rgba(52, 120, 240, 0.45), inset 0 0 16px rgba(52, 120, 240, 0.12); padding: 20px 0 0 20px; box-sizing: border-box">
+<img loading="lazy" decoding="async" src="./assets/2568aa5b220e17510f114e1e6fdf8f0b.png" alt="Exponential" style="width: 138px; height: auto; display: block; margin-bottom: 9px">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; font-size: 17px; color: #8db6ff; font-weight: 500">
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><path d="M9 3a4 4 0 0 0-4 4 4 4 0 0 0-2 7 4 4 0 0 0 6 5V3zM15 3a4 4 0 0 1 4 4 4 4 0 0 1 2 7 4 4 0 0 1-6 5V3z"></path></svg>AI tools</li>
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><circle cx="8" cy="7" r="3.5"></circle><circle cx="16" cy="7" r="3.5"></circle><path d="M2 21c0-4 3-6 6-6s6 2 6 6M10 21c0-4 3-6 6-6s6 2 6 6"></path></svg>Coaching</li>
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><circle cx="7" cy="8" r="3"></circle><circle cx="17" cy="8" r="3"></circle><path d="M1.5 20c0-3.5 2.5-5.5 5.5-5.5s5.5 2 5.5 5.5M11.5 20c0-3.5 2.5-5.5 5.5-5.5s5.5 2 5.5 5.5"></path></svg>Community</li>
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><circle cx="7" cy="7" r="4"></circle><circle cx="17" cy="7" r="4"></circle><circle cx="7" cy="17" r="4"></circle><circle cx="17" cy="17" r="4"></circle></svg>Components</li>
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><path d="M3 21V10l5 3V10l5 3V5h4v16zM7 17h2M12 17h2"></path><circle cx="18" cy="6" r="3"></circle></svg>Manufacturing</li>
+<li style="display: flex; align-items: center; gap: 12px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8d6ee" stroke-width="1.8"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="M6 6l3.5 3.5M18 6l-3.5 3.5M6 18l3.5-3.5M18 18l-3.5-3.5"></path></svg>Support</li>
+</ul>
+</div>
+</div>
+<svg width="38" height="14" viewBox="0 0 38 14" fill="none" stroke="#e6ebf3" stroke-width="2" stroke-linecap="round"><path d="M1 7h34M29 1l6 6-6 6"></path></svg>
+<div style="width: 132px; height: 202px; border: 1.5px solid #273246; border-radius: 9px; background-color: #050a13; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center">
+<img loading="lazy" decoding="async" src="./assets/8d5ea4fd57a810e485ee60b9d50717f5.png" alt="" style="width: 67px; height: 67px; display: block">
+<div style="font-size: 17px; font-weight: 700; letter-spacing: 0.04em; line-height: 22px; margin-top: 14px">REAL<br>PRODUCT</div>
+</div>
+</div>
+</section>
+
+
+<section id="solution" style="padding: 32px 0 27px 0; border-bottom: 1px solid #141c2b">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num">02</span><h2 class="xp-h2">WHY NOW</h2></div>
+<div class="xp-3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 24px">
+<div class="xp-card" style="display: flex; gap: 20px; padding: 27px 10px 24px 24px; border: 1.5px solid #142134; border-radius: 6px; background-color: #030b13">
+<img loading="lazy" decoding="async" src="./assets/489fac91cc9e5feaf563594c85e346ac.png" alt="" style="width: 64px; height: 63px; display: block; flex: none; margin-top: -6px">
+<div><div style="font-size: 17.5px; font-weight: 700; line-height: 22px; white-space: nowrap">AI makes building easier</div><p style="margin: 10px 0 0 0; font-size: 16px; line-height: 25px; color: #a0a8b6">What used to take months<br>can now be done in days.</p></div>
+</div>
+<div class="xp-card" style="display: flex; gap: 20px; padding: 27px 10px 24px 24px; border: 1.5px solid #142134; border-radius: 6px; background-color: #030b13">
+<img loading="lazy" decoding="async" src="./assets/21037487720a32c0007f52c500afdcb8.png" alt="" style="width: 64px; height: 63px; display: block; flex: none; margin-top: -6px">
+<div><div style="font-size: 17.5px; font-weight: 700; line-height: 22px; white-space: nowrap">Huge interest in DIY robotics</div><p style="margin: 10px 0 0 0; font-size: 16px; line-height: 25px; color: #a0a8b6">More people (especially kids)<br>want to build and learn.</p></div>
+</div>
+<div class="xp-card" style="display: flex; gap: 22px; padding: 27px 8px 24px 24px; border: 1.5px solid #142134; border-radius: 6px; background-color: #030b13">
+<img loading="lazy" decoding="async" src="./assets/47efd32694c6dfed7285a5bb494c1b5b.png" alt="" style="width: 64px; height: 63px; display: block; flex: none; margin-top: -6px">
+<div><div style="font-size: 16px; font-weight: 700; line-height: 22px; white-space: nowrap">Global supply chain is accessible</div><p style="margin: 10px 0 0 0; font-size: 16px; line-height: 25px; color: #a0a8b6">We can connect builders with<br>manufacturers in India and China.</p></div>
+</div>
+</div>
+</section>
+
+
+<section id="plan" style="padding: 34px 0 34px 0; border-bottom: 1px solid #141c2b">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num">03</span><h2 class="xp-h2">OUR PLAN (IN SIMPLE STEPS)</h2></div>
+<div class="xp-steps" style="display: grid; grid-template-columns: 252px 250px 238px 234px 1fr; margin-top: 30px">
+<div class="xp-step"><div class="xp-sh"><span class="xp-dot">1</span>Build a community</div><div class="xp-sv" style="justify-content: flex-start"><img loading="lazy" decoding="async" src="./assets/06e354c7c3f18b271721037a47a216ee.png" alt="Community sketch: laptop and social platforms" style="width: 192px; height: 150px; display: block"><svg class="xp-arr" width="50" height="18" viewBox="0 0 50 18" fill="none" stroke="#3f7fe8" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h44M37 2l9 7-9 7"></path></svg></div><p class="xp-sp">Bring together people interested in AI + robotics + DIY projects.</p></div>
+<div class="xp-step"><div class="xp-sh"><span class="xp-dot">2</span>Start tutoring</div><div class="xp-sv"><img loading="lazy" decoding="async" src="./assets/44b58df7b34869d97deb4d3ade04add1.png" alt="Laptop with AI + Robotics lesson" style="width: 202px; height: 150px; display: block"><svg class="xp-arr" width="50" height="18" viewBox="0 0 50 18" fill="none" stroke="#3f7fe8" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h44M37 2l9 7-9 7"></path></svg></div><p class="xp-sp">Teach kids and beginners how to use AI and assemble robots.</p></div>
+<div class="xp-step"><div class="xp-sh"><span class="xp-dot">3</span>Create content</div><div class="xp-sv" style="padding-left: 26px"><img loading="lazy" decoding="async" src="./assets/507780d2468babb2fac4a7c99f8d7fc1.png" alt="Phone playing a video" style="width: 117px; height: 156px; display: block; margin-top: -6px"><svg class="xp-arr" width="50" height="18" viewBox="0 0 50 18" fill="none" stroke="#3f7fe8" stroke-width="2.2" stroke-linecap="round" style="margin-left: 26px"><path d="M2 9h44M37 2l9 7-9 7"></path></svg></div><p class="xp-sp">Share what people are building, explain projects, show the process.</p></div>
+<div class="xp-step"><div class="xp-sh"><span class="xp-dot">4</span>Build tools</div><div class="xp-sv" style="padding-left: 4px"><img loading="lazy" decoding="async" src="./assets/cf3d1d1455294e6b7dec2e33e131b2ad.png" alt="App window with a 3D cube" style="width: 162px; height: 150px; display: block"><svg class="xp-arr" width="50" height="18" viewBox="0 0 50 18" fill="none" stroke="#3f7fe8" stroke-width="2.2" stroke-linecap="round" style="margin-left: 16px"><path d="M2 9h44M37 2l9 7-9 7"></path></svg></div><p class="xp-sp">Develop AI tools based on what the community needs.</p></div>
+<div class="xp-step"><div class="xp-sh"><span class="xp-dot">5</span>Connect to suppliers</div><div class="xp-sv" style="padding-left: 8px"><img loading="lazy" decoding="async" src="./assets/3bb2ff1c511bcf37640c09b8ceb039fe.png" alt="Factory shipping a box" style="width: 195px; height: 150px; display: block"></div><p class="xp-sp">Help source components, manufacturing, packaging and shipping.</p></div>
+</div>
+</section>
+
+
+<section id="revenue" style="padding: 34px 0 44px 0; border-bottom: 1px solid #141c2b">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num">04</span><h2 class="xp-h2">HOW IT WORKS (THE FULL VISION)</h2></div>
+<p style="margin: 14px 0 0 0; font-size: 21px; line-height: 26px; color: #c2c9d4">From an idea to a real product, in one connected workflow.</p>
+<div class="xp-flow" style="display: flex; justify-content: space-between; margin-top: 22px">
+<div class="xp-fc" style="width: 162px"><div class="xp-ft">1. IDEA</div><img loading="lazy" decoding="async" src="./assets/9e324a994a039a3093314b891faec521.png" alt="Lightbulb: I want to build this robot" style="width: 141px; height: 164px; display: block; margin: 0 auto"></div>
+<div class="xp-fa"><svg width="46" height="18" viewBox="0 0 46 18" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h40M33 2l9 7-9 7"></path></svg></div>
+<div class="xp-fc" style="width: 159px"><div class="xp-ft">2. DESIGN</div><img loading="lazy" decoding="async" src="./assets/754012ccba3b54388b9b51b075f6011a.png" alt="Laptop: use AI to design and plan" style="width: 147px; height: 164px; display: block; margin: 0 auto"></div>
+<div class="xp-fa"><svg width="46" height="18" viewBox="0 0 46 18" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h40M33 2l9 7-9 7"></path></svg></div>
+<div class="xp-fc" style="width: 165px"><div class="xp-ft">3. COMPONENTS</div><img loading="lazy" decoding="async" src="./assets/51cc6ec6c7136b64c63d24eface3e72a.png" alt="Parts: find the right parts" style="width: 152px; height: 164px; display: block; margin: 0 auto"></div>
+<div class="xp-fa"><svg width="46" height="18" viewBox="0 0 46 18" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h40M33 2l9 7-9 7"></path></svg></div>
+<div class="xp-fc" style="width: 190px"><div class="xp-ft">4. MANUFACTURING</div><img loading="lazy" decoding="async" src="./assets/99e1c614506b3ac8cd6c194c24ca5b0a.png" alt="Factory: connect to suppliers in India and China" style="width: 176px; height: 164px; display: block; margin: 0 auto"></div>
+<div class="xp-fa"><svg width="46" height="18" viewBox="0 0 46 18" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h40M33 2l9 7-9 7"></path></svg></div>
+<div class="xp-fc" style="width: 172px"><div class="xp-ft">5. PRODUCT</div><img loading="lazy" decoding="async" src="./assets/0dd474c43338b2cd69910ae65869515e.png" alt="Box: get it made, packaged and shipped" style="width: 158px; height: 164px; display: block; margin: 0 auto"></div>
+<div class="xp-fa"><svg width="46" height="18" viewBox="0 0 46 18" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round"><path d="M2 9h40M33 2l9 7-9 7"></path></svg></div>
+<div class="xp-fc" style="width: 172px"><div class="xp-ft">6. COMMUNITY</div><img loading="lazy" decoding="async" src="./assets/504afacadb9d7132ad3e9f50ceff94a0.png" alt="People and globe: share, get feedback, create more" style="width: 161px; height: 164px; display: block; margin: 0 auto"></div>
+</div>
+</section>
+
+
+<section id="roadmap" class="xp-kids" style="position: relative; min-height: 316px; padding: 30px 0 30px 0; border-bottom: 1px solid #141c2b">
+<img loading="lazy" decoding="async" class="xp-kids-img" src="./assets/bb89d864e49eb3b82da6f2b43ae20130.png" alt="Robotics kit, controller board and tablet checklist: understand components, assemble step by step, write the code, test and improve" style="position: absolute; right: -52px; top: -4px; width: 677px; height: 318px; display: block">
+<div style="position: relative; z-index: 1; max-width: 600px">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num">05</span><h2 class="xp-h2" style="font-size: 29px; white-space: nowrap">INITIAL FOCUS: KIDS &amp; BEGINNERS</h2></div>
+<p style="margin: 12px 0 0 0; font-size: 20.5px; line-height: 25.5px; color: #c6ccd7; max-width: 490px">We start with coaching and tutoring to help kids and beginners learn AI and build real robots.</p>
+<ul class="xp-check" style="margin: 20px 0 0 0">
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>How to use AI for robotics</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>How to work with electronics (Arduino, Raspberry Pi, etc.)</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>How to assemble components into a robot</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Project-based learning</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Simple, fun and hands-on</li>
+</ul>
+</div>
+</section>
+
+
+<div class="xp-split2" style="display: grid; grid-template-columns: 685px 1fr">
+<section style="position: relative; padding: 22px 30px 30px 0; border-right: 1.5px solid #1c2638; min-height: 380px">
+<img loading="lazy" decoding="async" class="xp-content-img" src="./assets/1cfb353c933ce72d632e5a95482a9359.png" alt="Phone sketch titled Vibe coding physical devices, annotated: what people are building, what gets views, what can we create" style="position: absolute; left: 369px; top: 12px; width: 306px; height: 357px; display: block">
+<div style="position: relative; z-index: 1">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num" style="font-size: 27px">06</span><h2 class="xp-h2" style="font-size: 25px">CONTENT STRATEGY</h2></div>
+<p style="margin: 12px 0 0 0; font-size: 15.5px; line-height: 22px; color: #c6ccd7; max-width: 400px">We create content to grow the community and attract more builders.</p>
+<img loading="lazy" decoding="async" src="./assets/1855fc4bf68fa1fb833d8a06b356b4c9.png" alt="X, Instagram, TikTok and YouTube" style="width: 258px; height: 63px; display: block; margin-top: 14px">
+<ul class="xp-check xp-check-s" style="margin: 18px 0 0 0">
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Break down what people are building on X, Reels, TikTok</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Find what’s getting the most views</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Follow similar topics and trends</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Start with “vibe coding physical devices”</li>
+<li><span class="xp-box"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2.5 6.2 5 8.6 9.6 3.6"></path></svg></span>Show real builds, simple explanations and the process</li>
+</ul>
+</div>
+</section>
+<section style="padding: 22px 0 30px 38px">
+<div style="display: flex; align-items: center; gap: 30px"><span class="xp-num" style="font-size: 27px">07</span><h2 class="xp-h2" style="font-size: 25px">FIRST 5 DAYS</h2></div>
+<p style="margin: 12px 0 0 0; font-size: 16px; line-height: 22px; color: #c6ccd7">Our immediate goal: Build the community in 5 days.</p>
+<ol class="xp-days" style="list-style: none; margin: 14px 0 0 0; padding: 0">
+<li><span class="xp-dot">1</span><div><div class="xp-dt">Define the community</div><div class="xp-dd">Name, positioning, create Discord/WhatsApp, set up social accounts.</div></div></li>
+<li><span class="xp-dot">2</span><div><div class="xp-dt">Research the ecosystem</div><div class="xp-dd">Study what people are building, what gets views, which creators are growing.</div></div></li>
+<li><span class="xp-dot">3</span><div><div class="xp-dt">Start publishing</div><div class="xp-dd">Post content around AI + robotics + DIY projects.</div></div></li>
+<li><span class="xp-dot">4</span><div><div class="xp-dt">Start recruiting</div><div class="xp-dd">Reach out to creators, students, parents, makers, STEM communities.</div></div></li>
+<li><span class="xp-dot">5</span><div><div class="xp-dt">Launch first build/challenge</div><div class="xp-dd">Get people to actually build something.</div></div></li>
+</ol>
+</section>
+</div>
+
+</div>
+</div>
+</div>
+</main>
+
+<script>
+// Scroll-spy: highlight the nav link for the section under the header.
+(function () {
+  var bar = document.querySelector('.xp-bar');
+  var nav = bar.querySelector('.xp-nav');
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sections = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+  var root = document.documentElement;
+  var current = -1, pinned = -1, ticking = false;
+
+  function activate(i) {
+    if (i === current) return;
+    current = i;
+    links.forEach(function (a, j) {
+      a.classList.toggle('is-active', j === i);
+      if (j === i) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+    });
+    // On narrow screens the nav scrolls horizontally; keep the active link in view.
+    if (nav.scrollWidth > nav.clientWidth) {
+      var a = links[i];
+      nav.scrollTo({ left: a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: 'smooth' });
+    }
+  }
+
+  function update() {
+    ticking = false;
+    if (pinned > -1) return activate(pinned);
+    var hdr = bar.offsetHeight;
+    var line = hdr + Math.min(innerHeight * 0.25, 160);
+    var i = 0;
+    for (var j = 0; j < sections.length; j++) {
+      if (sections[j].getBoundingClientRect().top <= line) i = j;
+    }
+    // At the very bottom the last section may never reach the line.
+    if (innerHeight + scrollY >= root.scrollHeight - 2) i = sections.length - 1;
+    activate(i);
+  }
+
+  function schedule() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  function syncHeaderHeight() {
+    root.style.setProperty('--hdr', bar.offsetHeight + 'px');
+    schedule();
+  }
+
+  // A clicked link stays highlighted through the smooth scroll (and if the page
+  // cannot scroll far enough) until the user scrolls on their own again.
+  nav.addEventListener('click', function (e) {
+    var i = links.indexOf(e.target.closest('a'));
+    if (i > -1) { pinned = i; activate(i); }
+  });
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (type) {
+    addEventListener(type, function (e) {
+      if (pinned > -1 && !nav.contains(e.target)) { pinned = -1; schedule(); }
+    }, { passive: true });
+  });
+
+  addEventListener('scroll', schedule, { passive: true });
+  addEventListener('resize', syncHeaderHeight);
+  if ('ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(bar);
+  syncHeaderHeight();
+})();
+</script>
+</body>
+</html>
